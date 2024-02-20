@@ -144,7 +144,7 @@ resource "aws_instance" "webserver1" {
   user_data              = "${file("apache.sh")}"
 
   tags = {
-    Name = "Web Server"
+    Name = "Web Server-1"
   }
 }
 
@@ -158,7 +158,7 @@ resource "aws_instance" "webserver2" {
   user_data              = "${file("apache.sh")}"
 
   tags = {
-    Name = "Web Server"
+    Name = "Web Server-2"
   }
 }
 
@@ -327,7 +327,7 @@ resource "aws_lb_listener" "external-elb" {
   }
 }
 
-/*resource "aws_db_instance" "default" {
+resource "aws_db_instance" "default" {
   allocated_storage      = 10
   db_subnet_group_name   = aws_db_subnet_group.default.id
   engine                 = "mysql"
@@ -335,11 +335,11 @@ resource "aws_lb_listener" "external-elb" {
   instance_class         = "db.t2.micro"
   multi_az               = true
   db_name                = "mydb"
-  username               = "gaurav"
-  password               = "Gaurav#123321"
+  username               = "mayuri"
+  password               = "Kasturi#123321"
   skip_final_snapshot    = true
   vpc_security_group_ids = [aws_security_group.database-sg.id]
-}*/
+}
 
 resource "aws_db_subnet_group" "default" {
   name       = "master"
