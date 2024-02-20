@@ -342,7 +342,7 @@ resource "aws_lb_listener" "external-elb" {
 }*/
 
 resource "aws_db_subnet_group" "default" {
-  name       = "main"
+  name       = "master"
   subnet_ids = [aws_subnet.database-subnet-1.id, aws_subnet.database-subnet-2.id]
 
   tags = {
