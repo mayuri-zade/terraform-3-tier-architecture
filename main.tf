@@ -135,7 +135,7 @@ resource "aws_route_table_association" "b" {
 
 #Create EC2 Instance
 resource "aws_instance" "webserver1" {
-  ami                    = "ami-0c84181f02b974bc3"
+  ami                    = "ami-06b72b3b2a773be2b"
   instance_type          = "t2.micro"
   availability_zone      = "ap-south-1a"
   key_name               = "devops"
@@ -149,7 +149,7 @@ resource "aws_instance" "webserver1" {
 }
 
 resource "aws_instance" "webserver2" {
-  ami                    = "ami-0c84181f02b974bc3"
+  ami                    = "ami-06b72b3b2a773be2b"
   instance_type          = "t2.micro"
   availability_zone      = "ap-south-1b"
   key_name               = "devops"
@@ -164,7 +164,7 @@ resource "aws_instance" "webserver2" {
 
 #Create EC2 Instance
 resource "aws_instance" "appserver1" {
-  ami                    = "ami-0c84181f02b974bc3"
+  ami                    = "ami-06b72b3b2a773be2b"
   instance_type          = "t2.micro"
   availability_zone      = "ap-south-1a"
   key_name               = "devops"
@@ -176,7 +176,7 @@ resource "aws_instance" "appserver1" {
 }
 
 resource "aws_instance" "appserver2" {
-  ami                    = "ami-0c84181f02b974bc3"
+  ami                    = "ami-06b72b3b2a773be2b"
   instance_type          = "t2.micro"
   availability_zone      = "ap-south-1b"
   key_name               = "devops"
@@ -335,8 +335,8 @@ resource "aws_lb_listener" "external-elb" {
   instance_class         = "db.t2.micro"
   multi_az               = true
   db_name                = "mydb"
-  username               = "raham"
-  password               = "Rahamshaik#444555"
+  username               = "gaurav"
+  password               = "Gaurav#123321"
   skip_final_snapshot    = true
   vpc_security_group_ids = [aws_security_group.database-sg.id]
 }*/
@@ -355,4 +355,4 @@ output "lb_dns_name" {
   description = "The DNS name of the load balancer"
   value       = aws_lb.external-elb.dns_name
 }
-          
+  
